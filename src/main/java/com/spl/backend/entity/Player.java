@@ -1,5 +1,6 @@
 package com.spl.backend.entity;
 
+import com.spl.backend.enums.PlayerRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,10 +17,11 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String playerName;
-    private String role;
     @ManyToOne
     @JoinColumn(name = "team_id")
     private Team team;
+    @Enumerated(EnumType.STRING)
+    private PlayerRole role;
 
 
 }
