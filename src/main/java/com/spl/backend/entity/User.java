@@ -1,9 +1,7 @@
 package com.spl.backend.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.spl.backend.enums.UserRole;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,5 +18,7 @@ public class User {
     private String name;
     private String emailId;
     private String password;
+    @Enumerated(EnumType.STRING)
+    private UserRole role;
 
 }
